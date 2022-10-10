@@ -1,12 +1,27 @@
 <template>
     <div class="schedule-call">
-        <button>Schedule a Call</button>
+        <SheduleCall  :scheduleVisible="scheduleVisible" v-if="scheduleCallIsVisible"/>
+        <button @click="scheduleCall()">Schedule a Call</button>
     </div>
 </template>
 
 <script>
+import SheduleCall from './SheduleCall.vue';
 export default {
-
+    data() {
+        return {
+            scheduleCallIsVisible: false
+        };
+    },
+    methods: {
+        scheduleVisible(sheduleStatus) {
+            this.scheduleCallIsVisible = sheduleStatus;
+        },
+        scheduleCall() {
+            this.scheduleCallIsVisible = true;
+        }
+    },
+    components: { SheduleCall }
 }
 </script>
 

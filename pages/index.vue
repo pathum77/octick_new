@@ -35,19 +35,19 @@
                       </div>
                       <div>
                           <div class="img-container">
-                              <img src="" alt="">
+                              <img src="../assets/3d/test.png" alt="">
                           </div>
                       </div>
                   </div>
                   <div class="plus-container">
-                      <img src="" alt="">
+                      <img src="../assets/icons/plus.png" alt="">
                   </div>
                   <div class="card">
                       <p class="title">Digital Marketing</p>
                       <p class="title-sub">Go to Market with our Digital team, or hire your 1st dedicated Designer.</p>
                       <p class="content-small">We provides consulting and qualified marketing professionals who have managed ad spends with solid performance benchmarks. Get together and plan your digital marketing journey today.</p>
                       <div class="img-container">
-                          <img src="" alt="">
+                          <img src="../assets/3d/test.png" alt="">
                       </div>
                   </div>
               </div>
@@ -142,19 +142,7 @@
               </div>
           </div>
           <div class="container-seven">
-              <div class="heading-sub-wrapper" style="margin: 0;">
-                  <h2 class="heading-sub">How can we help?</h2>
-              </div>
-              <div class="heading-main-wrapper">
-                  <h1 class="heading-main">Talk to our experts today.</h1>
-              </div>
-              <div class="img-container">
-                  <img src="" alt="">
-              </div>
-              <div class="btn-wrapper">
-                <SheduleCallBtn/>
-                <EmailBtn/>
-              </div>
+              <HowWeCanHelp/>
           </div>
       </div>
   </div>
@@ -163,9 +151,10 @@
 <script>
 import SheduleCallBtn from '~/components/SheduleCallBtn.vue';
 import EmailBtn from '../components/EmailBtn.vue';
+import HowWeCanHelp from '~/components/HowWeCanHelp.vue';
 
 export default {
-    components: { SheduleCallBtn, EmailBtn }
+    components: { SheduleCallBtn, EmailBtn, HowWeCanHelp }
 }
 </script>
 
@@ -286,13 +275,11 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: yellow;
   }
 
   .container-two .img-container{
       width: 200px;
       height: 200px;
-      background-color: yellow;
   }
 
   .container-three{
@@ -398,20 +385,6 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-  }
-
-  .container-seven .img-container{
-      width: 200px;
-      height: 200px;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      background-color: yellow;
-  }
-  
-  .container-seven .btn-wrapper{
-      width: 300px;
-      display: flex;
-      justify-content: space-between;
   }
 
   @media only screen and (max-width: 1200px) {
