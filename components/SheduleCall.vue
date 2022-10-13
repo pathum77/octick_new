@@ -2,7 +2,7 @@
     <div class="schedule-call">
         <div  class="schedule-call-main container-xxl">
             <div v-if="scheduleCallBoxIsVisible" class="schedule-call-box">
-                <button v-on:click="scheduleVisible(scheduleCallIsVisible);" class="btn-close"></button><br>
+                <button v-on:click="scheduleVisible(scheduleCallIsVisible);" class="btn-close"><img src="../assets/icons/close.png" alt=""></button><br>
                 <div class="left-right row">
                     <div class="left-box" :class="leftBoxSizeChange ? 'col-lg-4 col-md-4' : 'col-lg-6 col-md-6'">
                     <transition name="form-btn-trans">
@@ -179,6 +179,11 @@ export default {
             formContact: '',
             // isLoading: false,
         }
+    },
+
+    loading: {
+        color: 'red',
+        height: '5px'
     },
 
     components: {
@@ -601,6 +606,7 @@ export default {
 </script>
 
 <style scoped>
+
     .schedule-call{
         position: relative;
         top: 0;
@@ -628,7 +634,20 @@ export default {
     }
 
     .btn-close{
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: none;
         float: right;
+    }
+
+    .btn-close img{
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .left-box p{

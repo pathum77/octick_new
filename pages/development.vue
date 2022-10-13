@@ -45,7 +45,7 @@
                             combined with the low-cost platforms such as Wix or Shopify abilities and low costs on
                             maintenance, this may be the best option for you.</template>
                         <template v-slot:img>
-                            <img src="../assets/images/home/tech_logos/wix_logo.png" alt="">
+                            <img src="../assets/images/home/tech_logos/wix.png" alt="">
                         </template>
                     </Card>
                 </div>
@@ -61,7 +61,7 @@
                             catered to your business. Its abilities in being low costs on maintenance may be the best
                             option for you.</template>
                         <template v-slot:img>
-                            <img src="../assets/images/home/tech_logos/wix_logo.png" alt="">
+                            <img src="../assets/images/home/tech_logos/wix.png" alt="">
                         </template>
                     </Card>
                 </div>

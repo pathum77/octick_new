@@ -4,17 +4,17 @@
             <div :class="themeStatus ? 'navigation-dark' : 'navigation'">
                 <div class="navigation-wrapper">
                     <div class="logo">
-                        <a href="/">
+                        <NuxtLink to="/">
                             <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
                                 alt="">
-                        </a>
+                        </NuxtLink>
                     </div>
                     <div :class="themeStatus ? 'navi-links-dark' : 'navi-links'">
-                        <a href="/development">Development</a>
-                        <a href="/digital-marketing">Digital Marketing</a>
-                        <a href="/solutions">Solutions</a>
-                        <a href="/clients">Clients</a>
-                        <a href="/why-we-do-it">Why we do it</a>
+                        <NuxtLink to="/development">Development</NuxtLink>
+                        <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
+                        <NuxtLink to="/solutions">Solutions</NuxtLink>
+                        <NuxtLink to="/clients">Clients</NuxtLink>
+                        <NuxtLink to="/why-we-do-it">Why we do it</NuxtLink>
                         <SheduleCallBtn />
                     </div>
                     <div class="burger-btn">
@@ -33,20 +33,19 @@
                         <div class="top">
                             <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
                                 alt="">
-                            <button @click="mobileNaviIsVisible = false;" class="btn-close"></button>
+                            <button @click="mobileNaviIsVisible = false;" class="btn-close"><img src="../assets/icons/close.png" alt=""></button>
                         </div>
                         <div class="bottom">
-                            <a href="/development">Development</a>
-                            <a href="/digital-marketing">Digital Marketing</a>
-                            <a href="/solutions">Solutions</a>
-                            <a href="/clients">Clients</a>
-                            <a href="/why-we-do-it">Why we do it</a>
+                            <NuxtLink to="/development">Development</NuxtLink>
+                            <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
+                            <NuxtLink to="/solutions">Solutions</NuxtLink>
+                            <NuxtLink to="/clients">Clients</NuxtLink>
+                            <NuxtLink to="/why-we-do-it">Why we do it</NuxtLink>
                             <SheduleCallBtn />
                         </div>
                     </div>
                 </transition>
             </div>
-
         </div>
         <nuxt />
     </div>
@@ -57,6 +56,9 @@ import SheduleCallBtn from '~/components/SheduleCallBtn.vue';
 
 
 export default {
+
+    transition: 'mobile-navi-trans',
+
     data() {
         return {
             themeStatus: null,
@@ -73,6 +75,11 @@ export default {
 </script>
 
 <style scoped>
+
+.mobile-navi-trans-enter-active, .mobile-navi-trans-leave-active { transition: opacity .5s; }
+.mobile-navi-trans-enter-from, .mobile-navi-trans-leave-to { opacity: 0; }
+
+
 .navi {
     height: 78px;
 }
@@ -193,6 +200,11 @@ export default {
     background-color: transparent;
 }
 
+.mobile-navigation .top button img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .mobile-navigation .bottom {
     display: flex;
     flex-direction: column;
@@ -206,7 +218,7 @@ export default {
     color: black;
 }
 
-.mobile-navi-trans-enter-from {
+/* .mobile-navi-trans-enter-from {
     opacity: 0;
 }
 
@@ -220,7 +232,7 @@ export default {
 
 .mobile-navi-trans-leave-active {
     transition: all 1000ms ease;
-}
+} */
 
 @media only screen and (max-width: 1200px) {
     .navi {

@@ -83,6 +83,11 @@ img {
 }
 
 @media only screen and (max-width: 767px) {
+
+    .container-seven {
+        padding: 10px;
+    }
+
     .heading-main {
         font-size: 30px;
     }
