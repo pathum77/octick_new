@@ -167,7 +167,7 @@ import WorkImgsSlider from '~/components/WorkImgsSlider.vue';
 import TechImgsSlider from '~/components/TechImgsSlider.vue';
 
 export default {
-    components: { SheduleCallBtn, EmailBtn, HowWeCanHelp, WorkImgsSlider, TechImgsSlider }
+    components: { SheduleCallBtn, EmailBtn, HowWeCanHelp, WorkImgsSlider, TechImgsSlider}
 }
 </script>
 

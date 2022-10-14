@@ -14,7 +14,7 @@
                         <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
                         <NuxtLink to="/solutions">Solutions</NuxtLink>
                         <NuxtLink to="/clients">Clients</NuxtLink>
-                        <NuxtLink to="/why-we-do-it">Why we do it</NuxtLink>
+                        <NuxtLink to="/why-we-do-it">About Us</NuxtLink>
                         <SheduleCallBtn />
                     </div>
                     <div class="burger-btn">
@@ -27,27 +27,74 @@
                 </div>
             </div>
 
-            <div v-if="mobileNaviIsVisible" class="mobile-navigation">
-                <transition name="mobile-navi-trans">
-                    <div v-if="mobileNaviIsVisible" class="mobile-navigation-wrapper">
-                        <div class="top">
-                            <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
-                                alt="">
-                            <button @click="mobileNaviIsVisible = false;" class="btn-close"><img src="../assets/icons/close.png" alt=""></button>
+            <!-- <transition name="mobile-navi-trans"> -->
+                <div v-if="mobileNaviIsVisible" class="mobile-navigation">
+                    <transition name="mobile-navi-trans">
+                        <div :ref="mobileNaviIsVisible" class="mobile-navigation-wrapper">
+                            <div class="top">
+                                <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
+                                    alt="">
+                                <button @click="mobileNaviIsVisible = false;" class="btn-close"><img src="../assets/icons/close.png" alt=""></button>
+                            </div>
+                            <div class="bottom">
+                                <NuxtLink to="/development">Development</NuxtLink>
+                                <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
+                                <NuxtLink to="/solutions">Solutions</NuxtLink>
+                                <NuxtLink to="/clients">Clients</NuxtLink>
+                                <NuxtLink to="/why-we-do-it">About Us</NuxtLink>
+                                <SheduleCallBtn />
+                            </div>
                         </div>
-                        <div class="bottom">
-                            <NuxtLink to="/development">Development</NuxtLink>
-                            <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
-                            <NuxtLink to="/solutions">Solutions</NuxtLink>
-                            <NuxtLink to="/clients">Clients</NuxtLink>
-                            <NuxtLink to="/why-we-do-it">Why we do it</NuxtLink>
-                            <SheduleCallBtn />
-                        </div>
-                    </div>
-                </transition>
-            </div>
+                    </transition>
+                </div>
+            <!-- </transition> -->
+            
         </div>
         <nuxt />
+        <div class="footer">
+        <div class="row">
+            <div class="col-lg-4 items-wrapper">
+                <img src="../assets/logo/Octic_Logo_Black_landscape.png" alt="" class="logo">
+                <p>Simplified digital presence</p>
+                <p>Grow your business at the place you want</p>
+            </div>
+            <div class="col-lg-2 items-wrapper">
+                <h3>Product</h3>
+                <a href="">Features</a>
+                <a href="">API</a>
+                <a href="">Solutuins</a>
+            </div>
+            <div class="col-lg-2 items-wrapper">
+                <h3>Company</h3>
+                <a href="">About Us</a>
+                <a href="">Blog</a>
+                <a href="">Contact Us</a>
+            </div>
+            <div class="col-lg-2 items-wrapper">
+                <h3>Support</h3>
+                <a href="">Support Center</a>
+                <a href="">System Status</a>
+                <a href="">Languages</a>
+            </div>
+            <div class="col-lg-2 items-wrapper">
+                <h3>Product</h3>
+                <div>
+                    <a href=""><img src="" alt=""></a>
+                    <a href=""><img src="" alt=""></a>
+                    <a href=""><img src="" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright-wrapper">
+            <a href="">&copy; 2022 OCTICK</a>
+            <div>
+                <a href="">Terms & Conditions</a>
+                <p>&nbsp; | &nbsp;</p>
+                <a href="">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
     </div>
 </template>
 
@@ -76,8 +123,8 @@ export default {
 
 <style scoped>
 
-.mobile-navi-trans-enter-active, .mobile-navi-trans-leave-active { transition: opacity .5s; }
-.mobile-navi-trans-enter-from, .mobile-navi-trans-leave-to { opacity: 0; }
+.mobile-navi-trans-enter-active, .mobile-navi-trans-leave-active { transition: all 1s; }
+  .mobile-navi-trans-enter, .mobile-navi-trans-leave-active { opacity: 0; }
 
 
 .navi {
@@ -109,10 +156,11 @@ export default {
 
 .logo img {
     width: 200px;
+    margin: auto 0;
 }
 
 .navi-links {
-    width: 70%;
+    width: 700px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,6 +188,10 @@ export default {
 }
 
 .navi-links a:hover {
+    color: red;
+}
+
+.navi-links a.nuxt-link-exact-active {
     color: red;
 }
 
@@ -233,6 +285,56 @@ export default {
 .mobile-navi-trans-leave-active {
     transition: all 1000ms ease;
 } */
+
+/* FOOTER */
+
+   .footer p{
+        font-size: 13px;
+    }
+
+    .footer h3{
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer a{
+        text-decoration: none;
+        margin-bottom: 10px;
+        font-size: 13px;
+        color: black;
+    }
+
+    .footer{
+        padding: 10px 50px;
+    }
+
+    .items-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .logo{
+        width: 200px;
+        margin-bottom: 30px;
+    }
+
+    .copyright-wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .copyright-wrapper div{
+        display: flex;
+    }
+
+    .items-wrapper div a{
+        padding: 10px;
+        background-color: grey;
+
+    }
 
 @media only screen and (max-width: 1200px) {
     .navi {

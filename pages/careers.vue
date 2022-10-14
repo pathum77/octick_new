@@ -18,6 +18,13 @@
                         <span class="title-1">UI/UX</span>
                         <span class="title-2">Software Engineering (Xamarin)</span>
                         <p>Full-time Permanent | Kandy, Sri Lanka</p>
+                        <div class="btn-wrapper">
+                            <button v-if="uiUxSeeBtn"
+                                @click="uxUi = !uxUi; uiUxSeeBtn = false; uxUiForm = false; uiUxApplyBtn = true;">See
+                                more</button>
+                            <button v-if="uiUxApplyBtn"
+                                @click="uxUiForm = !uxUiForm; uiUxApplyBtn = false; uxUi = false; uiUxSeeBtn = true;">Apply</button>
+                        </div>
                         <div v-if="uxUi" class="item-content">
                             <span class="title-3">About the role</span>
                             <p>We are looking for a Developer that is qualified in Xamarin Programming. <br><br>
@@ -42,11 +49,7 @@
                             0087
                             </p>
                         </div>
-                        <div class="btn-wrapper">
-                            <button @click="uxUi = !uxUi; uxUiForm = false;">See more</button>
-                            <button @click="uxUiForm = !uxuiForm; uxUi = false;">Apply</button>
-                        </div>
-                        <div v-if="uxUiForm" class="form">
+                        <div v-if="uxUiForm" class="form" id="uiux-form">
                             <label for="">Name</label>
                             <input class="form-control" type="text" name="" id="">
                             <label for="">Email</label>
@@ -65,28 +68,37 @@
                         <span class="title-1">FULLSTACK DEVELOPER</span>
                         <span class="title-2">Fullstack Software Developer</span>
                         <p>Full-time Permanent | Kandy, Sri Lanka</p>
+                        <div class="btn-wrapper">
+                            <button v-if="fullstackDeveloperSeeBtn"
+                                @click="fullstackDeveloper = !fullstackDeveloper; fullstackDeveloperForm = false; fullstackDeveloperSeeBtn = false; fullstackDeveloperApplyBtn = true;">See
+                                more</button>
+                            <button v-if="fullstackDeveloperApplyBtn"
+                                @click="fullstackDeveloperForm = !fullstackDeveloperForm; fullstackDeveloper = false; fullstackDeveloperSeeBtn = true; fullstackDeveloperApplyBtn = false;">Apply</button>
+                        </div>
                         <div v-if="fullstackDeveloper" class="item-content">
                             <span class="title-3">About the role</span>
-                            <p>We are looking for a Full stack developer qualified and experienced in the following languages given below. <br><br>
-                                <ul>
-                                    <li>Java - Spring boot</li>
-                                    <li>.NET</li>
-                                    <li>Angular</li>
-                                    <li>Vue JS</li>
-                                    <li>Xamarin</li>
-                                    <li>React</li>
-                                </ul>
-                                You don't need to know all of these languages to apply but, you need to have the confidence that you can improve yourself going forward. <br><br>
-                                Schedule: <br>
+                            <p>We are looking for a Full stack developer qualified and experienced in the following
+                                languages given below. <br><br>
+                            <ul>
+                                <li>Java - Spring boot</li>
+                                <li>.NET</li>
+                                <li>Angular</li>
+                                <li>Vue JS</li>
+                                <li>Xamarin</li>
+                                <li>React</li>
+                            </ul>
+                            You don't need to know all of these languages to apply but, you need to have the confidence
+                            that you can improve yourself going forward. <br><br>
+                            Schedule: <br>
                             <ul>
                                 <li>Day shift</li>
                                 <li>Monday to Friday</li>
                             </ul>
-                                Ability to commute/relocate:
+                            Ability to commute/relocate:
                             <ul>
                                 <li>Kandy : reliably commute or plan to relocate before starting work (preferred)</li>
                             </ul>
-                                
+
                             Experience:
                             <ul>
                                 <li>Development 1 year (preferred)</li>
@@ -98,10 +110,6 @@
                             If you think you are a good fit, shoot us an email to info@technograpy.ca or call 077-123
                             0087
                             </p>
-                        </div>
-                        <div class="btn-wrapper">
-                            <button @click="fullstackDeveloper = !fullstackDeveloper; fullstackDeveloperForm = false;">See more</button>
-                            <button @click="fullstackDeveloperForm = !fullstackDeveloperForm; fullstackDeveloper = false;">Apply</button>
                         </div>
                         <div v-if="fullstackDeveloperForm" class="form">
                             <label for="">Name</label>
@@ -122,15 +130,23 @@
                         <span class="title-1">SOCIAL MEDIA DESIGNERS</span>
                         <span class="title-2">Social Media Designers</span>
                         <p>Kandy, Sri Lanka</p>
+                        <div class="btn-wrapper">
+                            <button v-if="smDesignerSeeBtn"
+                                @click="smDesigner = !smDesigner; smDesignerForm = false; smDesignerSeeBtn = false; smDesignerApplyBtn = true;">See
+                                more</button>
+                            <button v-if="smDesignerApplyBtn"
+                                @click="smDesignerForm = !smDesignerForm; smDesigner = false; smDesignerSeeBtn = true; smDesignerApplyBtn = false;">Apply</button>
+                        </div>
                         <div v-if="smDesigner" class="item-content">
                             <span class="title-3">About the role</span>
-                            <p>We are a start-up software development firm / social media management company based in Kandy, Sri Lanka. We are handling work directly from Canada and Australia. This would be a great opportunity if you are fluent in English and are a bright and creative individual. <br><br>
-                               If you are obsessed over good design and creativity, have an understanding of branding and social media marketing, you might be the one we are looking for. Experience in the space is a plus point although we do hire interns as well depending on your creativity.
+                            <p>We are a start-up software development firm / social media management company based in
+                                Kandy, Sri Lanka. We are handling work directly from Canada and Australia. This would be
+                                a great opportunity if you are fluent in English and are a bright and creative
+                                individual. <br><br>
+                                If you are obsessed over good design and creativity, have an understanding of branding
+                                and social media marketing, you might be the one we are looking for. Experience in the
+                                space is a plus point although we do hire interns as well depending on your creativity.
                             </p>
-                        </div>
-                        <div class="btn-wrapper">
-                            <button @click="smDesigner = !smDesigner; smDesignerForm = false">See more</button>
-                            <button @click="smDesignerForm = !smDesignerForm; smDesigner = false;">Apply</button>
                         </div>
                         <div v-if="smDesignerForm" class="form">
                             <label for="">Name</label>
@@ -151,15 +167,23 @@
                         <span class="title-1">SOCIAL MEDIA MANAGER</span>
                         <span class="title-2">Social Media Manager</span>
                         <p>Kandy, Sri Lanka</p>
+                        <div class="btn-wrapper">
+                            <button v-if="smManagerSeeBtn"
+                                @click="smManager = !smManager; smManagerForm = false; smManagerSeeBtn = false; smManagerApplyBtn = true;">See
+                                more</button>
+                            <button v-if="smManagerApplyBtn"
+                                @click="smManagerForm = !smManagerForm; smManager = false; smManagerSeeBtn = true; smManagerApplyBtn = false;">Apply</button>
+                        </div>
                         <div v-if="smManager" class="item-content">
                             <span class="title-3">About the role</span>
-                            <p>This is a great opportunity if you are fluent in English and are a bright and creative individual. Having knowledge in software engineering or programming is a plus point. <br><br>
-                                If you are obsessed over good design and creativity, have an understanding of branding and social media marketing, you might be the one we are looking for. We require at least one year experience for this position. Make sure you send us your portfolio / previous work as reference.
+                            <p>This is a great opportunity if you are fluent in English and are a bright and creative
+                                individual. Having knowledge in software engineering or programming is a plus point.
+                                <br><br>
+                                If you are obsessed over good design and creativity, have an understanding of branding
+                                and social media marketing, you might be the one we are looking for. We require at least
+                                one year experience for this position. Make sure you send us your portfolio / previous
+                                work as reference.
                             </p>
-                        </div>
-                        <div class="btn-wrapper">
-                            <button @click="smManager = !smManager; smManagerForm = false;">See more</button>
-                            <button @click="smManagerForm = !smManagerForm; smManager = false;">Apply</button>
                         </div>
                         <div v-if="smManagerForm" class="form">
                             <label for="">Name</label>
@@ -177,7 +201,199 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr><br>
+            <h3 class="heading-sub">INTERNSHIPS</h3>
+            <div class="internship">
+                
+                <div class="container-xl">
+                    <!-- Web developer-->
+                <div class="careers-item">
+                    <span class="title-1">WEB DEVELOPER</span>
+                    <span class="title-2">Web Developer</span>
+                    <p>Kandy, Sri Lanka</p>
+                    <div class="btn-wrapper">
+                        <button @click="webDeveloper = !webDeveloper">Apply</button>
+                    </div>
+                    <transition name="trans">
+                        <div v-if="webDeveloper" class="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="Last Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="email" name="" id="" placeholder="E-Mail">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="number" name="" id="" placeholder="Mobile Number">
+                            </div>
+                        </div>
+                        <input class="" type="file" name="" id="">
+                        <div class="form-btn-wrapper">
+                            <button>SUBMIT</button>
+                        </div>
+                    </div>
+                    </transition>
+                </div>
+                <!-- Software developer-->
+                <div class="careers-item">
+                    <span class="title-1">SOFTWARE DEVELOPER</span>
+                    <span class="title-2">Software Developer</span>
+                    <p>Kandy, Sri Lanka</p>
+                    <div class="btn-wrapper">
+                        <button @click="softwareDeveloper = !softwareDeveloper">Apply</button>
+                    </div>
+                    <transition name="trans">
+                        <div v-if="softwareDeveloper" class="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="Last Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="email" name="" id="" placeholder="E-Mail">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="number" name="" id="" placeholder="Mobile Number">
+                            </div>
+                        </div>
+                        <input class="" type="file" name="" id="">
+                        <div class="form-btn-wrapper">
+                            <button>SUBMIT</button>
+                        </div>
+                    </div>
+                    </transition>
+                </div>
+                <!-- UI/UX designer-->
+                <div class="careers-item">
+                    <span class="title-1">UI/UX DESIGNER</span>
+                    <span class="title-2">Ui/Ux Designer</span>
+                    <p>Kandy, Sri Lanka</p>
+                    <div class="btn-wrapper">
+                        <button @click="uiUxDesigner = !uiUxDesigner">Apply</button>
+                    </div>
+                    <transition name="trans">
+                        <div v-if="uiUxDesigner" class="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="Last Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="email" name="" id="" placeholder="E-Mail">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="number" name="" id="" placeholder="Mobile Number">
+                            </div>
+                        </div>
+                        <input class="" type="file" name="" id="">
+                        <div class="form-btn-wrapper">
+                            <button>SUBMIT</button>
+                        </div>
+                    </div>
+                    </transition>
+                </div>
+                <!-- graphic designer-->
+                <div class="careers-item">
+                    <span class="title-1">GRAPHIC DESIGNER</span>
+                    <span class="title-2">Graphic Designer</span>
+                    <p>Kandy, Sri Lanka</p>
+                    <div class="btn-wrapper">
+                        <button @click="graphicDesigner = !graphicDesigner">Apply</button>
+                    </div>
+                    <transition name="trans">
+                        <div v-if="graphicDesigner" class="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="Last Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="email" name="" id="" placeholder="E-Mail">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="number" name="" id="" placeholder="Mobile Number">
+                            </div>
+                        </div>
+                        <input class="" type="file" name="" id="">
+                        <div class="form-btn-wrapper">
+                            <button>SUBMIT</button>
+                        </div>
+                    </div>
+                    </transition>
+                </div>
+                <!-- call center-->
+                <div class="careers-item">
+                    <span class="title-1">CALL CENTER</span>
+                    <span class="title-2">Call Center Representative</span>
+                    <p>Kandy, Sri Lanka</p>
+                    <div class="btn-wrapper">
+                        <button @click="callcenter = !callcenter">Apply</button>
+                    </div>
+                    <transition name="trans">
+                        <div v-if="callcenter" class="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="Last Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="email" name="" id="" placeholder="E-Mail">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="number" name="" id="" placeholder="Mobile Number">
+                            </div>
+                        </div>
+                        <input class="" type="file" name="" id="">
+                        <div class="form-btn-wrapper">
+                            <button>SUBMIT</button>
+                        </div>
+                    </div>
+                    </transition>
+                </div>
+                <!-- social media designer-->
+                <div class="careers-item">
+                    <span class="title-1">SOCIAL MEDIA</span>
+                    <span class="title-2">Social Media Designer</span>
+                    <p>Kandy, Sri Lanka</p>
+                    <div class="btn-wrapper">
+                        <button @click="socialMediaDesigner = !socialMediaDesigner">Apply</button>
+                    </div>
+                    <transition name="trans">
+                        <div v-if="socialMediaDesigner" class="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" name="" id="" placeholder="Last Name">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="email" name="" id="" placeholder="E-Mail">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="number" name="" id="" placeholder="Mobile Number">
+                            </div>
+                        </div>
+                        <input class="" type="file" name="" id="">
+                        <div class="form-btn-wrapper">
+                            <button>SUBMIT</button>
+                        </div>
+                    </div>
+                    </transition>
+                </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -186,15 +402,38 @@
 
 export default {
     data() {
-        return{
+        return {
             uxUi: false,
             uxUiForm: false,
+            uiUxSeeBtn: true,
+            uiUxApplyBtn: false,
+
             fullstackDeveloper: false,
             fullstackDeveloperForm: false,
+            fullstackDeveloperSeeBtn: true,
+            fullstackDeveloperApplyBtn: false,
+
             smDesigner: false,
             smDesignerForm: false,
+            smDesignerSeeBtn: true,
+            smDesignerApplyBtn: false,
+
             smManager: false,
             smManagerForm: false,
+            smManagerSeeBtn: true,
+            smManagerApplyBtn: false,
+
+            webDeveloper: false,
+
+            softwareDeveloper: false,
+
+            uiUxDesigner: false,
+
+            graphicDesigner: false,
+
+            callcenter: false,
+
+            socialMediaDesigner: false,
         }
     }
 }
@@ -202,6 +441,10 @@ export default {
 </script>
 
 <style scoped>
+
+.trans-enter-active, .trans-leave-active { transition: all .2s; }
+.trans-enter, .trans-leave-active { opacity: 0; }
+
 input {
     margin-bottom: 30px;
 }
@@ -229,7 +472,8 @@ input {
     background-size: contain;
 }
 
-.careers-items-container {
+.careers-items-container,
+.internship {
     width: 100%;
     padding: 10px;
     display: flex;
@@ -298,10 +542,10 @@ input {
     transition: .2s;
 }
 
-.form-btn-wrapper button:hover{
-        box-shadow: none;
-        color: white;
-    }
+.form-btn-wrapper button:hover {
+    box-shadow: none;
+    color: white;
+}
 
 @media only screen and (max-width: 1200px) {}
 

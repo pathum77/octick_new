@@ -32,31 +32,6 @@
                         support video tag</video>
                 </div>
             </div>
-            <div class="share">
-                <!-- <p>SHARE</p>
-                <div class="social">
-                    <div><img src="../../assets/icons/facebook_col.png" alt=""></div>
-                    <div><img src="../../assets/icons/twitter_col.png" alt=""></div>
-                    <div><img src="../../assets/icons/google+_col.png" alt=""></div>
-                </div> -->
-            </div>
-            <!-- <div class="row">
-                <div class="tab-view-box col-lg col-md">
-                    <div class="frame">
-                        <div class="screen">
-                            <video src="../../assets/images/clients/ramada_vid.mp4" autoplay muted>Your browser does not support video tag</video>
-                        </div>
-                    </div>
-                    <div class="home-btn"></div>
-                </div>
-                <div class="mobile-view-box col-lg col-md">
-                    <div class="frame">
-                        <div class="screen">
-                            <video src="../../assets/images/clients/ramada_vid.mp4" autoplay muted>Your browser does not support video tag</video>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </template>
@@ -111,7 +86,7 @@ export default {
 
 .top-wrapper-btn-box {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
 

@@ -1,56 +1,45 @@
 <template>
-    <div class="test">
-        <!-- <div class="slider">
-            <div class="slide-track">
-                <div class="slide">
-                <img src="../assets/images/home/worked/zavvers.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/oacray.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/technography.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/ramada.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/travel_ministry.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/zavvers.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/oacray.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/technography.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/ramada.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                <img src="../assets/images/home/worked/travel_ministry.png" height="100" width="250" alt="" />
-                </div>
-            </div>
-        </div> -->
-        <div style="width: 100%; height: 100px;">
-            <TechImgsSlider/>
-        </div>
-        
-    </div>
+  <div class="test">
+    <input type="file" ref="file" @change="setUploadFile" name="" id="">
+    <button @click="testBtn()">submit</button>
+  </div>
 </template>
 
 <script>
-import WorkImgsSlider from '~/components/WorkImgsSlider.vue';
-import TechImgsSlider from '~/components/TechImgsSlider.vue';
+
+
 export default {
-    components: { WorkImgsSlider, TechImgsSlider }
+
+  data() {
+    return {
+      cv: ''
+    }
+  },
+
+  components: {},
+
+  methods: {
+
+    setUploadFile() {
+      this.cv = this.$refs.file.files[0];
+      console.log(this.cv)
+    },
+
+    async testBtn() {
+      const formData = new FormData();
+      formData.append("file", this.cv);
+      
+      const api = 'http://localhost:4000/test';
+            const testReq = await this.$axios.post(api, formData)
+            .then((response) => {
+                console.log(response)
+            });
+    }
+  }
 }
 </script>
 
 <style scoped>
-
 .test {
   align-items: center;
   background: #E3E3E3;
@@ -58,5 +47,4 @@ export default {
   height: 100vh;
   justify-content: center;
 }
-
 </style>
