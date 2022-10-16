@@ -118,7 +118,7 @@
                     <div class="col-lg">
                         <div class="card-wrapper">
                             <div class="img-container">
-                                <img src="" alt="">
+                                <img src="../assets/icons/content-writing.png" alt="">
                             </div>
                             <p class="container-six-title">SEO Content Writing</p>
                             <p class="container-six-content">We work with your company to implement a comprehensive SEO

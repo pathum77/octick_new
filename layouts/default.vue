@@ -14,7 +14,6 @@
                         <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
                         <NuxtLink to="/solutions">Solutions</NuxtLink>
                         <NuxtLink to="/clients">Clients</NuxtLink>
-                        <NuxtLink to="/why-we-do-it">About Us</NuxtLink>
                         <SheduleCallBtn />
                     </div>
                     <div class="burger-btn">
@@ -27,74 +26,27 @@
                 </div>
             </div>
 
-            <!-- <transition name="mobile-navi-trans"> -->
-                <div v-if="mobileNaviIsVisible" class="mobile-navigation">
-                    <transition name="mobile-navi-trans">
-                        <div :ref="mobileNaviIsVisible" class="mobile-navigation-wrapper">
-                            <div class="top">
-                                <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
-                                    alt="">
-                                <button @click="mobileNaviIsVisible = false;" class="btn-close"><img src="../assets/icons/close.png" alt=""></button>
-                            </div>
-                            <div class="bottom">
-                                <NuxtLink to="/development">Development</NuxtLink>
-                                <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
-                                <NuxtLink to="/solutions">Solutions</NuxtLink>
-                                <NuxtLink to="/clients">Clients</NuxtLink>
-                                <NuxtLink to="/why-we-do-it">About Us</NuxtLink>
-                                <SheduleCallBtn />
-                            </div>
-                        </div>
-                    </transition>
+            <transition name="mobile-navi-trans">
+                <div v-if="mobileNaviIsVisible" class="mobile-navigation-wrapper">
+                    <div class="top">
+                        <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
+                            alt="">
+                        <button @click="mobileNaviIsVisible = false;" class="btn-close"><img
+                                src="../assets/icons/close.png" alt=""></button>
+                    </div>
+                    <div class="bottom">
+                        <NuxtLink to="/development">Development</NuxtLink>
+                        <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
+                        <NuxtLink to="/solutions">Solutions</NuxtLink>
+                        <NuxtLink to="/clients">Clients</NuxtLink>
+                        <SheduleCallBtn />
+                    </div>
                 </div>
-            <!-- </transition> -->
-            
+            </transition>
+
         </div>
         <nuxt />
-        <div class="footer">
-        <div class="row">
-            <div class="col-lg-4 items-wrapper">
-                <img src="../assets/logo/Octic_Logo_Black_landscape.png" alt="" class="logo">
-                <p>Simplified digital presence</p>
-                <p>Grow your business at the place you want</p>
-            </div>
-            <div class="col-lg-2 items-wrapper">
-                <h3>Product</h3>
-                <a href="">Features</a>
-                <a href="">API</a>
-                <a href="">Solutuins</a>
-            </div>
-            <div class="col-lg-2 items-wrapper">
-                <h3>Company</h3>
-                <a href="">About Us</a>
-                <a href="">Blog</a>
-                <a href="">Contact Us</a>
-            </div>
-            <div class="col-lg-2 items-wrapper">
-                <h3>Support</h3>
-                <a href="">Support Center</a>
-                <a href="">System Status</a>
-                <a href="">Languages</a>
-            </div>
-            <div class="col-lg-2 items-wrapper">
-                <h3>Product</h3>
-                <div>
-                    <a href=""><img src="" alt=""></a>
-                    <a href=""><img src="" alt=""></a>
-                    <a href=""><img src="" alt=""></a>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="copyright-wrapper">
-            <a href="">&copy; 2022 OCTICK</a>
-            <div>
-                <a href="">Terms & Conditions</a>
-                <p>&nbsp; | &nbsp;</p>
-                <a href="">Privacy Policy</a>
-            </div>
-        </div>
-    </div>
+        <Footer />
     </div>
 </template>
 
@@ -104,12 +56,11 @@ import SheduleCallBtn from '~/components/SheduleCallBtn.vue';
 
 export default {
 
-    transition: 'mobile-navi-trans',
-
     data() {
         return {
             themeStatus: null,
             mobileNaviIsVisible: false,
+            naviTrans: false,
         }
     },
 
@@ -122,10 +73,15 @@ export default {
 </script>
 
 <style scoped>
+.mobile-navi-trans-enter-active,
+.mobile-navi-trans-leave-active {
+    transition: all .2s;
+}
 
-.mobile-navi-trans-enter-active, .mobile-navi-trans-leave-active { transition: all 1s; }
-  .mobile-navi-trans-enter, .mobile-navi-trans-leave-active { opacity: 0; }
-
+.mobile-navi-trans-enter,
+.mobile-navi-trans-leave-active {
+    opacity: 0;
+}
 
 .navi {
     height: 78px;
@@ -218,32 +174,36 @@ export default {
 }
 
 .mobile-navigation {
-    width: 100vw;
+    width: 500px;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.514);
+    background-color: rgb(238, 238, 238);
     position: fixed;
+    right: 0;
     z-index: 2000;
     display: none;
 }
 
 .mobile-navigation-wrapper {
     width: 500px;
+    height: 100vh;
     padding: 30px;
-    background-color: white;
-    position: relative;
+    background-color: rgb(238, 238, 238);
+    position: fixed;
+    right: 0px;
+    z-index: 2000;
 }
 
-.mobile-navigation .top {
+.mobile-navigation-wrapper .top {
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
 }
 
-.mobile-navigation .top img {
+.mobile-navigation-wrapper .top img {
     width: 120px;
 }
 
-.mobile-navigation .top button {
+.mobile-navigation-wrapper .top button {
     width: 25px;
     height: 25px;
     margin: 0;
@@ -252,19 +212,19 @@ export default {
     background-color: transparent;
 }
 
-.mobile-navigation .top button img{
+.mobile-navigation-wrapper .top button img {
     max-width: 100%;
     max-height: 100%;
 }
 
-.mobile-navigation .bottom {
+.mobile-navigation-wrapper .bottom {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.mobile-navigation .bottom a {
+.mobile-navigation-wrapper .bottom a {
     margin-bottom: 20px;
     text-decoration: none;
     color: black;
@@ -285,56 +245,6 @@ export default {
 .mobile-navi-trans-leave-active {
     transition: all 1000ms ease;
 } */
-
-/* FOOTER */
-
-   .footer p{
-        font-size: 13px;
-    }
-
-    .footer h3{
-        font-size: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .footer a{
-        text-decoration: none;
-        margin-bottom: 10px;
-        font-size: 13px;
-        color: black;
-    }
-
-    .footer{
-        padding: 10px 50px;
-    }
-
-    .items-wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .logo{
-        width: 200px;
-        margin-bottom: 30px;
-    }
-
-    .copyright-wrapper{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .copyright-wrapper div{
-        display: flex;
-    }
-
-    .items-wrapper div a{
-        padding: 10px;
-        background-color: grey;
-
-    }
 
 @media only screen and (max-width: 1200px) {
     .navi {
@@ -376,6 +286,12 @@ export default {
 
     .logo img {
         width: 120px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .mobile-navigation-wrapper {
+        width: 100vw;
     }
 }
 </style>

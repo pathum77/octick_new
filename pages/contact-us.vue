@@ -1,111 +1,199 @@
 <template>
-    <div class="contact-us">
-        <div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-11">
-					<div class="wrapper">
-						<div class="row no-gutters justify-content-between">
-							<div class="col-lg-6 d-flex align-items-stretch">
-								<div class="info-wrap w-100 p-5">
-									<h3 class="mb-4">Contact us</h3>
-				        	<div class="dbox w-100 d-flex align-items-start">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-map-marker"></span>
-				        		</div>
-				        		<div class="text pl-4">
-					            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-start">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-phone"></span>
-				        		</div>
-				        		<div class="text pl-4">
-					            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-start">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-paper-plane"></span>
-				        		</div>
-				        		<div class="text pl-4">
-					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-					          </div>
-				          </div>
-				        	<div class="dbox w-100 d-flex align-items-start">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-globe"></span>
-				        		</div>
-				        		<div class="text pl-4">
-					            <p><span>Website</span> <a href="#">yoursite.com</a></p>
-					          </div>
-				          </div>
-			          </div>
+	<div class="contact-us">
+		<Loader v-if="loading"/>
+		<div class="contact-us-container container-xl">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="left">
+						<h1 class="heading-main">Contact Us</h1><br><br>
+						<div class="content-wrapper">
+							<div class="icon-box">
+
 							</div>
-							<div class="col-lg-5">
-								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3 class="mb-4">Get in touch</h3>
-									<div id="form-message-warning" class="mb-4"></div> 
-				      		<div id="form-message-success" class="mb-4">
-				            Your message was sent, thank you!
-				      		</div>
-									<form method="POST" id="contactForm" name="contactForm">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-												</div>
-											</div>
-											<div class="col-md-12"> 
-												<div class="form-group">
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<textarea name="message" class="form-control" id="message" cols="30" rows="5" placeholder="Message"></textarea>
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="submit" value="Send Message" class="btn btn-primary">
-													<div class="submitting"></div>
-												</div>
-											</div>
-										</div>
-									</form>
-								</div>
+							<div class="content">
+								<h4>ADDRESS:</h4>
+								<p>198 West 21th Street, Suite 721 New York NY 10016</p>
 							</div>
+						</div>
+						<div class="content-wrapper">
+							<div class="icon-box">
+
+							</div>
+							<div class="content">
+								<h4>PHONE:</h4>
+								<p>771234567</p>
+							</div>
+						</div>
+						<div class="content-wrapper">
+							<div class="icon-box">
+
+							</div>
+							<div class="content">
+								<h4>EMAIL:</h4>
+								<p>octick@gmail.com</p>
+							</div>
+						</div>
+						<div class="content-wrapper">
+							<div class="icon-box">
+
+							</div>
+							<div class="content">
+								<h4>WEBSITE:</h4>
+								<p>octick.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="right">
+						<input v-model="firstName" class="form-control" type="text" name="" id=""
+							placeholder="First Name">
+						<input v-model="lastName" class="form-control" type="text" name="" id=""
+							placeholder="Last Name">
+						<input v-model="email" class="form-control" type="email" name="" id="" placeholder="E-Mail">
+						<input v-model="mobile" class="form-control" type="text" name="" id=""
+							placeholder="Mobile Phone">
+						<textarea v-model="message" class="form-control" name="" id="" cols="30" rows="3"
+							placeholder="Message"></textarea>
+						<div class="btn-form-submit">
+							<button @click="submit()">SUBMIT</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>
 </template>
 
 <script>
+
+import Swal from 'sweetalert2'
+
 export default {
+
+	data() {
+		return {
+			firstName: '',
+			lastName: '',
+			email: '',
+			mobile: '',
+			message: '',
+			loading: false,
+		}
+	},
+
+	methods: {
+		async submit() {
+			try {
+				this.loading = true;
+				const api = 'http://localhost:4000/contact-us';
+				const testReq = await this.$axios.post(api, {
+					name: this.firstName + ' ' + this.lastName,
+					email: this.email,
+					mobile: this.mobile,
+					message: this.message,
+				}).then((response) => {
+					this.loading = false;
+					if (response.data == '201') {
+						Swal.fire({
+							icon: 'success',
+							title: 'Success',
+							text: 'Your shedule has been submitted. We will contact you as soon as possible.',
+						})
+					} else {
+						Swal.fire({
+							icon: 'error',
+							title: 'Oops...!',
+							text: 'Something went wrong. Check Your Network and try again.',
+						})
+					}
+				});
+			}
+			catch (e) {
+				this.loading = false;
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops...!',
+					text: 'Something went wrong. Check Your Network and try again.',
+				})
+			}
+		}
+	}
 
 }
 </script>
 
 <style scoped>
-
-.contact-us{
-    min-width: 100vh;
-    background-image: url('../assets/banners/main_banner_2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+.col-lg-6 {
+	padding: 0;
 }
 
-.container{
-    background-color: black;
+p {
+	font-weight: 500;
 }
 
+input,
+textarea {
+	margin-bottom: 20px;
+}
+
+.contact-us {
+	min-height: 100vh;
+	padding: 50px;
+	background-image: url('../assets/banners/main_banner_2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.contact-us-container {
+	max-width: 800px;
+}
+
+.heading-main {
+	font-size: 40px;
+	text-align: left;
+}
+
+.content-wrapper {
+	display: flex;
+}
+
+.icon-box {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	background-color: yellow;
+}
+
+.right {
+	width: 100%;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+
+	.contact-us {
+		padding: 30px;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	h4 {
+		font-size: 20px;
+	}
+
+	.heading-main {
+		font-size: 30px;
+		text-align: center;
+	}
+
+	.contact-us {
+		padding: 20px 10px;
+	}
+
+}
 </style>

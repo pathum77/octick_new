@@ -131,7 +131,7 @@
                         </div>
                     </transition>
                     <transition name="time-range-trans">
-                        <div v-if="timeRangeIsVisible" class="time-box col-lg-3 col-md-3 col-sm-3">
+                        <div v-if="timeRangeIsVisible" class="time-box col-lg-3 col-md-3 col-sm-3" id="time-box">
                             <p>{{selectedDate}}, {{selectedMonth}} {{selectedYear}}</p>
                             <div class="row">
                                 <div class="time-range-box col-lg col-md col-sm">
@@ -280,6 +280,12 @@ export default {
             
             this.timeRangeIsVisible = true;
             this.leftBoxSizeChange = true;
+
+            // const timeBox = document.getElementById('time-box')
+
+            if(screen.width<767){
+                // timeBox.scrollTo(0, 300);
+            }
         },
 
         timeSelectedConfirmation(timeIndex){

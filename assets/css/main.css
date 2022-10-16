@@ -1,3 +1,50 @@
-*{
-    /* font-family:'Times New Roman', Times, serif; */
+
+@font-face{
+    font-family: 'MyFont';
+    src: url('../font/HurmeGeometricSans1_Bold.otf') format('truetype');
+}
+
+* {
+    font-family: 'MyFont', Fallback, sans-serif;
+}
+
+
+.heading-main {
+    text-align: center;
+    font-size: 55px;
+    font-weight: 500;
+    background: linear-gradient(to right, red, red, blue, blue);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.btn-form-submit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-form-submit button{
+    width: 150px;
+    height: 40px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+}
+
+@media only screen and (max-width: 991px) {
+
+    .heading-main {
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .heading-main {
+        font-size: 30px;
+    }
 }

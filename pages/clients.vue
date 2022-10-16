@@ -17,7 +17,7 @@
                             <div class="img">
                                 <img src="../assets/images/clients/zavvers.png" alt="">
                             </div>
-                            <h2>ZAVVERS Cleaning</h2>
+                            <span>ZAVVERS Cleaning</span>
                             <h6>WEB DEVELOPMENT</h6>
                             <NuxtLink to="/projects/zavvers-web-app">READ MORE</NuxtLink>
                         </div>
@@ -27,7 +27,7 @@
                             <div class="img">
                                 <img src="../assets/images/clients/ramada_mobile.png" alt="">
                             </div>
-                            <h2>RAMADA Hotel</h2>
+                            <span>RAMADA Hotel</span>
                             <h6>MOBILE DEVELOPMENT</h6>
                             <NuxtLink to="/projects/ramada-mob-app">READ MORE</NuxtLink>
                         </div>
@@ -37,7 +37,7 @@
                             <div class="img">
                                 <img src="../assets/images/clients/cake.png" alt="">
                             </div>
-                            <h2>CAKE</h2>
+                            <span>CAKE</span>
                             <h6>WEB DEVELOPMENT</h6>
                             <NuxtLink to="/projects/cake-web-app">READ MORE</NuxtLink>
                         </div>
@@ -78,6 +78,7 @@ export default {
 .heading-main {
     text-align: center;
     font-size: 55px;
+    font-weight: 500;
     background: linear-gradient(to right, red, red, blue, blue);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -120,6 +121,15 @@ export default {
     margin-bottom: 50px;
 }
 
+.item span{
+    font-size: 35px;
+    font-weight: 500;
+    background: linear-gradient(to right, purple, purple, blue, blue);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
 .item .img {
     max-width: 100%;
     height: 300px;
@@ -135,7 +145,7 @@ export default {
     padding: 5px 20px;
     border: none;
     color: white;
-    background-color: #365D87;
+    background: linear-gradient(to right, purple, purple, blue, blue);
 }
 
 
