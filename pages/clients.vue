@@ -71,6 +71,11 @@ export default {
 
 <style scoped>
 
+.colo-lg-6 , .col-md-6 , .row{
+    /* padding: 0; */
+    margin: 0;
+}
+
 .container-one {
     padding-top: 50px;
 }

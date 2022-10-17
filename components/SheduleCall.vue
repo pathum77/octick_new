@@ -2,11 +2,11 @@
     <div class="schedule-call">
         <Loader v-if="loading"/>
         <div v-if="scheduleCallBoxIsVisible" class="schedule-call-main container-xxl">
-            <div v-if="scheduleCallBoxIsVisible" class="schedule-call-box">
+            <div v-if="scheduleCallBoxIsVisible" class="schedule-call-box" ref="scheduleCalll">
                 <button v-on:click="scheduleVisible(scheduleCallIsVisible);" class="btn-close"><img
                         src="../assets/icons/close.png" alt=""></button><br>
                 <div class="left-right row">
-                    <div class="left-box" :class="leftBoxSizeChange ? 'col-lg-4 col-md-4' : 'col-lg-6 col-md-6'">
+                    <div class="left-box" :class="leftBoxSizeChange ? 'col-lg-4 col-md-4' : 'col-lg-6 col-md-6'" id="left-box">
                         <transition name="form-btn-trans">
                             <button @click="formBackBtn()" v-if="formIsVisible" class="btn-form-back"><img
                                     style="width: 30px;" src="../assets/icons/arrow-left-circle.svg" alt=""></button>
@@ -99,25 +99,25 @@
                                 <input v-model="formEmail" class="form-control" type="email" name="" id="" required><br>
                                 <label class="label-bold" for="">Which of these bests describes what you're hoping to
                                     achieve working with us. *</label><br>
-                                <input v-model="formFact" class="form-check-input" type="radio" name="fact" id=""
+                                <input v-model="formFact" class="" type="radio" name="fact" id=""
                                     value="To build software product">
                                 <label class="label-regular" for="">&nbsp; I want to build my software
                                     product</label><br>
-                                <input v-model="formFact" class="form-check-input" type="radio" name="fact" id=""
+                                <input v-model="formFact" class="" type="radio" name="fact" id=""
                                     value="To increase engineering bandwidth" required>
                                 <label class="label-regular" for="">&nbsp; I want to increase engineering
                                     bandwidth</label><br>
-                                <input v-model="formFact" class="form-check-input" type="radio" name="fact" id=""
+                                <input v-model="formFact" class="" type="radio" name="fact" id=""
                                     value="To take product to market">
                                 <label class="label-regular" for="">&nbsp; I want to take my product to
                                     market</label><br>
-                                <input v-model="formFact" class="form-check-input" type="radio" name="fact" id=""
+                                <input v-model="formFact" class="" type="radio" name="fact" id=""
                                     value="To generate more leads/customers">
                                 <label class="label-regular" for="">&nbsp; I need to generate more
                                     leads/customers</label>
                                 <br><br>
                                 <label class="label-bold" for="">Tell us a little bit about what you need *</label>
-                                <textarea v-model="formDesc" class="form-controll" name="" id="" cols="50" rows="3"
+                                <textarea v-model="formDesc" class="form-control" name="" id=""
                                     required></textarea><br>
                                 <label class="label-bold" for="">Company Website *</label>
                                 <input v-model="formCompSite" class="form-control" type="text" name="" id=""
@@ -131,7 +131,7 @@
                         </div>
                     </transition>
                     <transition name="time-range-trans">
-                        <div v-if="timeRangeIsVisible" class="time-box col-lg-3 col-md-3 col-sm-3" id="time-box">
+                        <div v-if="timeRangeIsVisible" class="time-box col-lg-3 col-md-3 col-sm-3" ref="tBox">
                             <p>{{selectedDate}}, {{selectedMonth}} {{selectedYear}}</p>
                             <div class="row">
                                 <div class="time-range-box col-lg col-md col-sm">
@@ -281,10 +281,8 @@ export default {
             this.timeRangeIsVisible = true;
             this.leftBoxSizeChange = true;
 
-            // const timeBox = document.getElementById('time-box')
-
             if(screen.width<767){
-                // timeBox.scrollTo(0, 300);
+                document.getElementById("left-box").style.display = "none";
             }
         },
 
@@ -1192,13 +1190,14 @@ export default {
         background-color: transparent;
         border: none;
         position: relative;
-        top: -45px;
+        top: -40px;
         left: -20px;
     }
 
     .img-logo{
         width: 150px;
         margin: 0 auto;
+        transition: .3s;
     }
 
     .time-box p{
@@ -1296,13 +1295,6 @@ export default {
         font-weight: 100;
     }
 
-    .form-controll{
-        width: 400px;
-    }
-
-    .form-container textarea{
-        width: 400px;
-    }
 
     .btn-form-container{
         padding: 10px;
@@ -1483,7 +1475,7 @@ export default {
 
     @media only screen and (max-width: 767px) {
         .schedule-call-box{
-            height: 80%;
+            height: 100%;
             max-width: 500px;
             overflow-y: auto;
         }
@@ -1500,8 +1492,16 @@ export default {
             display: none;
         }
 
+        .time-range-box{
+            height: 100%;
+        }
+
         .time-range-box button{
             width: 100%;
+        }
+
+        .form-container{
+            max-height: 100%;
         }
     }
 

@@ -282,7 +282,7 @@
             </div>
             <hr><br>
             <h3 class="heading-sub">INTERNSHIPS</h3>
-            <div class="internship">
+            <div class="internship" id="internship">
 
                 <div class="container-xl">
                     <!-- Web developer-->
@@ -598,7 +598,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -608,7 +608,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FFullstackDeveloper() {
@@ -645,7 +649,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -655,7 +659,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FSocialMediaDesigner() {
@@ -692,7 +700,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -702,7 +710,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FSocialMediaManager() {
@@ -739,7 +751,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -749,7 +761,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FInternWebDeveloper() {
@@ -786,7 +802,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -796,7 +812,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FInternSoftwareDeveloper() {
@@ -833,7 +853,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -843,7 +863,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FInternUxUiDesigner() {
@@ -880,7 +904,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -890,7 +914,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FInternGraphicDesigner() {
@@ -927,7 +955,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -937,7 +965,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FInternCallCenter() {
@@ -974,7 +1006,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -984,7 +1016,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
         async FInternSocialMediaDesigner() {
@@ -1021,7 +1057,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...!',
-                        text: 'Something went wrong. Check Your Network and try again..!',
+                        text: 'Something went wrong. Please contact us directly..!',
                     })
                 }
             } else {
@@ -1031,7 +1067,11 @@ export default {
                     text: 'All input field must be filled..!',
                 })
             }
-
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.mobile = '';
+            this.cv = '';
         },
 
     },
@@ -1166,6 +1206,14 @@ input {
     .heading-sub {
         font-size: 28px;
     }
+
+    .title-1{
+        font-size: 18px;
+    }
+
+    .title-2{
+        font-size: 25px;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1176,6 +1224,14 @@ input {
 
     .heading-sub {
         font-size: 22px;
+    }
+
+    .title-1{
+        font-size: 13px;
+    }
+
+    .title-2{
+        font-size: 18px;
     }
 }
 </style>

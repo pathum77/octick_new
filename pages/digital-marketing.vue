@@ -148,6 +148,12 @@ export default {
 </script>
 
 <style scoped>
+
+.colo-lg-6 , .col-md-6 , .row{
+    padding: 0;
+    margin: 0;
+}
+
 img {
     max-width: 100%;
 }

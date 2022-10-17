@@ -7,25 +7,24 @@
                 <p>Grow your business at the place you want</p>
             </div>
             <div class="col-lg-2 col-md-4 items-wrapper">
-                <h3>Product</h3>
-                <a href="">Features</a>
-                <a href="">API</a>
-                <a href="">Solutuins</a>
-            </div>
-            <div class="col-lg-2 col-md-4 items-wrapper">
                 <h3>Company</h3>
-                <a href="">About Us</a>
-                <a href="">Blog</a>
-                <a href="">Contact Us</a>
+                <a href="/development">Development</a>
+                <a href="/digital-marketing">Digital Marketing</a>
+                <a href="solution">Solution</a>
+                <a href="/clients">Clients</a>
             </div>
             <div class="col-lg-2 col-md-4 items-wrapper">
                 <h3>Support</h3>
-                <a href="">Support Center</a>
-                <a href="">System Status</a>
-                <a href="">Languages</a>
+                <a href="">Schedule a Call</a>
+                <a href="/contact-us">Contact Us</a>
             </div>
             <div class="col-lg-2 col-md-4 items-wrapper">
-                <h3>Product</h3>
+                <h3>Careers</h3>
+                <a href="/careers">Careers</a>
+                <a href="/careers#internship">Internships</a>
+            </div>
+            <div class="col-lg-2 col-md-4 items-wrapper">
+                <h3>Social</h3>
                 <div class="product-items">
                     <a href=""><div class="social"><img src="../assets/icons/facebook.png" alt=""></div></a>
                     <a href=""><div class="social"><img src="../assets/icons/twitter.png" alt=""></div></a>

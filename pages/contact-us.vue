@@ -1,6 +1,6 @@
 <template>
 	<div class="contact-us">
-		<Loader v-if="loading"/>
+		<Loader v-if="loading" />
 		<div class="contact-us-container container-xl">
 			<div class="row">
 				<div class="col-lg-6">
@@ -8,7 +8,7 @@
 						<h1 class="heading-main">Contact Us</h1><br><br>
 						<div class="content-wrapper">
 							<div class="icon-box">
-
+								<img src="../assets/icons/location.png" alt="">
 							</div>
 							<div class="content">
 								<h4>ADDRESS:</h4>
@@ -17,7 +17,7 @@
 						</div>
 						<div class="content-wrapper">
 							<div class="icon-box">
-
+								<img src="../assets/icons/phone.png" alt="">
 							</div>
 							<div class="content">
 								<h4>PHONE:</h4>
@@ -26,7 +26,7 @@
 						</div>
 						<div class="content-wrapper">
 							<div class="icon-box">
-
+								<img src="../assets/icons/mail.png" alt="">
 							</div>
 							<div class="content">
 								<h4>EMAIL:</h4>
@@ -35,7 +35,7 @@
 						</div>
 						<div class="content-wrapper">
 							<div class="icon-box">
-
+								<img src="../assets/icons/web.png" alt="">
 							</div>
 							<div class="content">
 								<h4>WEBSITE:</h4>
@@ -84,39 +84,52 @@ export default {
 
 	methods: {
 		async submit() {
-			try {
-				this.loading = true;
-				const api = 'http://localhost:4000/contact-us';
-				const testReq = await this.$axios.post(api, {
-					name: this.firstName + ' ' + this.lastName,
-					email: this.email,
-					mobile: this.mobile,
-					message: this.message,
-				}).then((response) => {
+			if (this.firstName != '' && this.lastName != '' && this.email != '' && this.mobile != '' && this.message != '') {
+				try {
+					this.loading = true;
+					const api = 'http://localhost:4000/contact-us';
+					const testReq = await this.$axios.post(api, {
+						name: this.firstName + ' ' + this.lastName,
+						email: this.email,
+						mobile: this.mobile,
+						message: this.message,
+					}).then((response) => {
+						this.loading = false;
+						if (response.data == '201') {
+							Swal.fire({
+								icon: 'success',
+								title: 'Success',
+								text: 'Your message has been submitted. We will contact you as soon as possible.',
+							})
+						} else {
+							Swal.fire({
+								icon: 'error',
+								title: 'Oops...!',
+								text: 'Something went wrong. Check Your Network and try again.',
+							})
+						}
+					});
+				}
+				catch (e) {
 					this.loading = false;
-					if (response.data == '201') {
-						Swal.fire({
-							icon: 'success',
-							title: 'Success',
-							text: 'Your shedule has been submitted. We will contact you as soon as possible.',
-						})
-					} else {
-						Swal.fire({
-							icon: 'error',
-							title: 'Oops...!',
-							text: 'Something went wrong. Check Your Network and try again.',
-						})
-					}
-				});
-			}
-			catch (e) {
-				this.loading = false;
+					Swal.fire({
+						icon: 'error',
+						title: 'Oops...!',
+						text: 'Something went wrong. Please contact us directly.',
+					})
+				}
+			} else {
 				Swal.fire({
-					icon: 'error',
-					title: 'Oops...!',
-					text: 'Something went wrong. Check Your Network and try again.',
-				})
+								icon: 'warning',
+								title: 'Oops...!',
+								text: 'All required input field must be filled.',
+							})
 			}
+			this.firstName = '';
+			this.lastName = '';
+			this.email = '';
+			this.mobile = '';
+			this.message = '';
 		}
 	}
 
@@ -124,6 +137,11 @@ export default {
 </script>
 
 <style scoped>
+.icon-box img {
+	width: 25px;
+	height: 25px;
+}
+
 .col-lg-6 {
 	padding: 0;
 }
@@ -140,7 +158,7 @@ textarea {
 .contact-us {
 	min-height: 100vh;
 	padding: 50px;
-	background-image: url('../assets/banners/main_banner_2.png');
+	background-image: url('../assets/banners/banner_op.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -162,14 +180,14 @@ textarea {
 	width: 30px;
 	height: 30px;
 	margin-right: 10px;
-	background-color: yellow;
 }
 
 .right {
 	width: 100%;
 	padding: 20px;
 	border-radius: 10px;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.425);
+	backdrop-filter: blur(3px);
 }
 
 @media only screen and (max-width: 1200px) {

@@ -27,6 +27,11 @@ export default {
 
 <style scoped>
 
+/* .colo-lg-6 , .col-md-6 , .card , .row{
+    padding: 0;
+    margin: 0;
+} */
+
     .card{
         height: 100%;
         padding: 50px 30px;
@@ -74,6 +79,12 @@ export default {
         .card{
             padding: 30px 20px;
         }
+    }
+
+    @media only screen and (max-width: 767px) {
+        /* .card{
+            padding: 30px 20px;
+        } */
     }
 
 </style>

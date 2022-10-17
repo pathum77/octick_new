@@ -29,16 +29,18 @@
             <transition name="mobile-navi-trans">
                 <div v-if="mobileNaviIsVisible" class="mobile-navigation-wrapper">
                     <div class="top">
-                        <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
+                        <a href="/">
+                            <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
                             alt="">
+                        </a>
                         <button @click="mobileNaviIsVisible = false;" class="btn-close"><img
                                 src="../assets/icons/close.png" alt=""></button>
                     </div>
                     <div class="bottom">
-                        <NuxtLink to="/development">Development</NuxtLink>
-                        <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
-                        <NuxtLink to="/solutions">Solutions</NuxtLink>
-                        <NuxtLink to="/clients">Clients</NuxtLink>
+                        <button @click="mobileNaviIsVisible = false;" class="btn-mobile-nav-link"><NuxtLink to="/development">Development</NuxtLink></button>
+                        <button @click="mobileNaviIsVisible = false;" class="btn-mobile-nav-link"><NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink></button>
+                        <button @click="mobileNaviIsVisible = false;" class="btn-mobile-nav-link"><NuxtLink to="/solutions">Solutions</NuxtLink></button>
+                        <button @click="mobileNaviIsVisible = false;" class="btn-mobile-nav-link"><NuxtLink to="/clients">Clients</NuxtLink></button>
                         <SheduleCallBtn />
                     </div>
                 </div>
@@ -73,6 +75,12 @@ export default {
 </script>
 
 <style scoped>
+
+.btn-mobile-nav-link{
+    margin-bottom: 20px;
+    border: none;
+}
+
 .mobile-navi-trans-enter-active,
 .mobile-navi-trans-leave-active {
     transition: all .2s;
@@ -147,7 +155,7 @@ export default {
     color: red;
 }
 
-.navi-links a.nuxt-link-exact-active {
+.navi-links a.nuxt-link-exact-active , .mobile-navigation-wrapper .bottom a.nuxt-link-exact-active {
     color: red;
 }
 
