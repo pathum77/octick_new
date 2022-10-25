@@ -1,6 +1,7 @@
 <template>
     <div class="schedule-call">
         <nuxt-link to="/contact-us"><button>Email Us</button></nuxt-link>
+        <!-- <button @click="emailBtn()">Test</button> -->
     </div>
 </template>
 
@@ -11,25 +12,25 @@ import { mapMutations } from 'vuex'
 
 export default {
 
-    // methods: {
-    //     async emailBtn() {
-    //         // Swal.fire({
-    //         //     icon: 'success',
-    //         //     title: 'Oops...',
-    //         //     text: 'Something went wrong!',
-    //         // })
+    data() {
+        return {
+            testData: '' //localStorage.getItem('storedData')
+        }
+    },
 
-    //         // this.$store.commit('increment');
-    //         // console.log(this.$store.state.themeState)
+    methods: {
 
-    //         const api = 'http://localhost:4000/test';
-    //         const testReq = await this.$axios.post(api, {
-    //             name: 'pathum',
-    //         }).then((response) => {
-    //             console.log(response)
-    //         });
-    //     }
-    // }
+        async emailBtn() {
+            // if (process.client) {
+            //     localStorage.setItem('storedData', 'pathum')
+            // }
+
+            // console.log(localStorage.getItem('storedData'));
+
+            // this.$store.commit('increment');
+            // console.log(this.$store.state.themeState)
+        }
+    }
 
 }
 </script>

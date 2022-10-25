@@ -4,23 +4,22 @@
             <MainBanner>
                 <template v-slot:header-1>Simplified Digital Marketing Process.</template>
                 <template v-slot:header-2>Our Digital Marketing Value</template>
-                <template v-slot:content-2>We're a digital solutions agency creating next-level marketing strategies
-                    that maintain an online presence and reputation for your business. We understand that every company
-                    has its own unique goals. And we must have a well-planned and well-implemented digital marketing
-                    strategy that links specific business and market requirements to leverage online resources to
-                    achieve those objectives. Our well experienced strategic team will build a game plan for your
-                    marketing team. With the help of our creative designers, we will be able to super charge your online
-                    presence.</template>
+                <template v-slot:content-2>
+                    As a digital solutions agency we specialize in solving all your digital complications. As every 
+                    company has its own unique goals, we understand that the requirements needed to fulfill those 
+                    goals can be varied. Therefore, we provide a professional pool of experts from which we can 
+                    create the perfect digital team which can take you to those goals. Hiring Developers or 
+                    Designers have never been easier.
+                </template>
                 <template v-slot:header-3>Our Features</template>
                 <template v-slot:content-3>
                     <ul>
-                        <li>Our secure web coding is the industry norm and is just loved by search engines.</li>
-                        <li>Our innovative concept works draw the eye and deliver higher rates of change.</li>
-                        <li>Websites we build intuitively show diverse formats on different platforms.</li>
-                        <li>Monthly inexpensive support bundles so we can maintaine your online presence up to date and
-                            save your time.</li>
-                        <li>Eligible, high-volume traffic in our successful online marketing drives.</li>
-                        <li>To satisfy the company's needs, we are versatile.</li>
+                        <li>we build our teams based on your requirements, whether that includes dedicated teams for specific tasks or sharing teams across projects.</li>
+                        <li>We provide access to a pool of professionals in various sectors of the digital fields -  whether it be graphic designers to web developers to content creators.</li>
+                        <li>Our workflows are designed based on your requirements and internal processes to make integrating teams a breeze.</li>
+                        <li>global experience in carrying out projects across different industries provide you with a variety of crucial knowledge and skills.</li>
+                        <li>We take accountability seriously and provide top-notch customer service. During scoping, our team guarantees delivery timelines and is happy to be held accountable to give you ease of mind.</li>
+                        <li>Our flexibility and versatility provides the customer with a variety of options and methods to achieve their goals.</li>
                     </ul>
                 </template>
             </MainBanner>
@@ -31,15 +30,24 @@
             </div>
             <ContainerLeftContent>
                 <template v-slot:title>Planning</template>
-                <template v-slot:content>Figuring out the requirements and technologies needed to start up your idea.
-                    Following up on the idea, planning the team needed for the project to be completed.</template>
+                <template v-slot:content>
+                    The initial stage. Here we focus on figuring out and fine tuning the requirements and 
+                    technologies needed to start up your idea. Based on the requirements, we focus on setting up the 
+                    proper team with the relevant skillsets needed for the project to be completed.
+                </template>
                 <template v-slot:img><img src="../assets/3d/test.png" alt=""></template>
             </ContainerLeftContent>
             <ContainerRightContent>
                 <template v-slot:title>Analysis</template>
-                <template v-slot:content>Our workflows are designed based on your requirements and internal processes.
-                    This means we can set goals and integrate the team needed for your project. By figuring these steps
-                    we can roll out the roadmap and costing.</template>
+                <template v-slot:content>We base and design our workflows on your requirements and internal processes. 
+                    Through this process we set clear goals and carry out team integration in order to get your project 
+                    up and running. By getting precise information through careful analysis, we can then create a roadmap 
+                    for project completion, including a thorough cost-analysis. <br><br> Once all the details and 
+                    requirements are confirmed,  we can begin the process of hiring the necessary experts. As the 
+                    teams are built based on your requirements, we can prioritize the primary and essential teams, 
+                    and then towards the supportive teams which will contribute to seamlessly getting your project 
+                    underway.
+                </template>
                 <template v-slot:img><img src="../assets/3d/test.png" alt=""></template>
             </ContainerRightContent>
             <ContainerLeftContent>
@@ -55,19 +63,25 @@
                 <div class="col-lg">
                     <div class="left">
                         <span class="dedicated-title">Dedicated Teams</span><br>
-                        <p>Setting up your dedicated team would be one or more of our teams would be working on your
-                            Project or service for a minimum of 8 hours a day excluding the lunch hour. This
-                            team/individual will be reporting there daily status reports every working day and will be
-                            able to have weekly meetings depending on your request.</p>
+                        <p>Setting up your dedicated team would allow for more control and fine detailing of the 
+                            project. Dedicated teams will be solely working on your project for a minimum of 8 hours 
+                            a day excluding the lunch hour. These teams/individuals will be providing  daily status 
+                            updates every working day and will be able to have weekly meetings depending on your 
+                            request. Having a dedicated team can easily ensure that your project is prioritized and 
+                            delivered to perfection.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg">
                     <div class="right">
                         <span class="sharing-title">Sharing Teams</span><br>
-                        <p>Setting up your Sharing team would be one or more individuals working on your Project or
-                            service for a minimum of 2 hours a day. This team/individual will be reporting there daily
-                            status report regarding your project every working day and will be able to have
-                            weekly/monthly meetings depending on your request.</p>
+                        <p>Shared teams allow for a more varied level of flexibility. This option is better when you 
+                            as the client having multiple projects running which require the expertise of different 
+                            teams and individuals. Setting up your Sharing team would be one or more individuals 
+                            working on your Project or service for a minimum of 2 hours a day. This team/individual 
+                            will be reporting there daily status report regarding your project every working day and 
+                            will be able to have weekly/monthly meetings depending on your request.
+                        </p>
                     </div>
                 </div>
             </div>

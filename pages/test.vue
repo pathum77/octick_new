@@ -1,7 +1,6 @@
 <template>
   <div class="test">
-    <input type="file" ref="file" @change="setUploadFile" name="" id="">
-    <button @click="testBtn()">submit</button>
+    <h1 :class="$store.state.themeState == 'true' ? 'dark' : 'light'">This Is Nothing</h1>
   </div>
 </template>
 
@@ -9,42 +8,37 @@
 
 
 export default {
-
+  
   data() {
     return {
-      cv: ''
+      checkValue: null,
     }
   },
 
-  components: {},
+  mounted() {
+    this.$store.commit('setThemeState');
+  },
 
   methods: {
-
-    setUploadFile() {
-      this.cv = this.$refs.file.files[0];
-      console.log(this.cv)
-    },
-
-    async testBtn() {
-      const formData = new FormData();
-      formData.append("file", this.cv);
+    setTheme(){
       
-      const api = 'http://localhost:4000/test';
-            const testReq = await this.$axios.post(api, formData)
-            .then((response) => {
-                console.log(response)
-            });
     }
   }
 }
 </script>
 
 <style scoped>
-.test {
-  align-items: center;
-  background: #E3E3E3;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-}
+
+  .light{
+    color: black;
+    background-color: white;
+    transition: .5s;
+  }
+
+  .dark{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    transition: .5s;
+  }
+
 </style>

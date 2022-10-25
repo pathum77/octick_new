@@ -11,13 +11,12 @@
                 <template v-slot:header-3>Our Features</template>
                 <template v-slot:content-3>
                     <ul>
-                        <li>Our secure web coding is the industry norm and is just loved by search engines.</li>
-                        <li>Our innovative concept works draw the eye and deliver higher rates of change.</li>
-                        <li>Websites we build intuitively show diverse formats on different platforms.</li>
-                        <li>Monthly inexpensive support bundles so we can maintaine your online presence up to date and
-                            save your time.</li>
+                        <li>We use secure web coding that abides by the industry norm and works extremely efficiently with search engines.</li>
+                        <li>Our innovative and seamless concepts stand out and catches your eye,  while delivering higher rates of change. </li>
+                        <li>Websites we build intuitively show diverse formats on different platforms. </li>
+                        <li>We provide cost-efficient support bundles which maintains and updates your online presence and saves your time.</li>
                         <li>Eligible, high-volume traffic in our successful online marketing drives.</li>
-                        <li>To satisfy the company's needs, we are versatile.</li>
+                        <li>Versatile and efficient solutions to cater to all your needs.</li>
                     </ul>
                 </template>
             </MainBanner>
@@ -188,20 +187,22 @@
 </template>
 
 <script>
+
 import MainBanner from '~/components/MainBanner.vue';
 import Card from '../components/Card.vue';
 import HowWeCanHelp from '~/components/HowWeCanHelp.vue';
+
 export default {
-    components: { MainBanner, Card, HowWeCanHelp }
+
+    components: { MainBanner, Card, HowWeCanHelp },
+
 }
+
 </script>
 
 <style scoped>
 
-.colo-lg-6 , .col-md-6 , .row{
-    padding: 0;
-    margin: 0;
-}
+
 
 img {
     max-width: 100%;
@@ -254,6 +255,11 @@ img {
 }
 
 @media only screen and (max-width: 767px) {
+
+    .colo-lg-6 , .col-md-6 , .row{
+    padding: 0;
+    margin: 0;
+}
 
     .container-3 {
         padding: 0 10px;

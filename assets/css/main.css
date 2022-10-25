@@ -8,6 +8,24 @@
     font-family: 'MyFont', Fallback, sans-serif;
 }
 
+.dark-theme{
+    background-color: black;
+    color: white;
+}
+
+.light-theme{
+    background-color: white;
+    color: black;
+}
+
+.dark-theme-a{
+    color: white;
+}
+
+.light-theme-a{
+    color: black;
+}
+
 
 .heading-main {
     text-align: center;

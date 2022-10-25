@@ -1,19 +1,20 @@
 <template>
     <div>
         <div class="navi">
-            <div :class="themeStatus ? 'navigation-dark' : 'navigation'">
+            <div :class="$store.state.themeState == 'true' ? 'dark-theme' : 'light-theme'" class="navigation">
                 <div class="navigation-wrapper">
                     <div class="logo">
                         <NuxtLink to="/">
-                            <img :src="themeStatus ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
+                            <img :src="$store.state.themeState == 'true' ? require('../assets/logo/Octic_Logo_White_landscape.png') : require('../assets/logo/Octic_Logo_Black_landscape.png')"
                                 alt="">
                         </NuxtLink>
                     </div>
-                    <div :class="themeStatus ? 'navi-links-dark' : 'navi-links'">
+                    <div :class="$store.state.themeState == 'true' ? 'navi-links-dark' : 'navi-links'">
                         <NuxtLink to="/development">Development</NuxtLink>
                         <NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink>
                         <NuxtLink to="/solutions">Solutions</NuxtLink>
                         <NuxtLink to="/clients">Clients</NuxtLink>
+                        <!-- <button @click="setTheme()" class="btn-theme-toggle">t</button> -->
                         <SheduleCallBtn />
                     </div>
                     <div class="burger-btn">
@@ -41,6 +42,7 @@
                         <button @click="mobileNaviIsVisible = false;" class="btn-mobile-nav-link"><NuxtLink to="/digital-marketing">Digital Marketing</NuxtLink></button>
                         <button @click="mobileNaviIsVisible = false;" class="btn-mobile-nav-link"><NuxtLink to="/solutions">Solutions</NuxtLink></button>
                         <button @click="mobileNaviIsVisible = false;" class="btn-mobile-nav-link"><NuxtLink to="/clients">Clients</NuxtLink></button>
+                        <!-- <button @click="setTheme()">click</button> -->
                         <SheduleCallBtn />
                     </div>
                 </div>
@@ -69,6 +71,29 @@ export default {
     components: {
         SheduleCallBtn
     },
+
+    // created() {
+    //     this.testTheme = localStorage.getItem('storedData')
+    // },
+
+    mounted() {
+    this.$store.commit('setThemeState');
+  },
+
+    methods: {
+        setTheme(){
+            if (process.client) {
+                if(localStorage.getItem('storedData') === 'false'){
+                    localStorage.setItem('storedData', 'true')
+                } else {
+                    localStorage.setItem('storedData', 'false')
+                }
+            }
+            // console.log(localStorage.getItem('storedData'));
+
+            this.$store.commit('setThemeState');
+        },
+    }
 
 }
 
@@ -99,7 +124,6 @@ export default {
     width: 100%;
     padding: 10px 50px;
     position: fixed;
-    background-color: white;
     transition: .5s;
     z-index: 1000;
 }
@@ -109,6 +133,7 @@ export default {
     padding: 10px 50px;
     position: fixed;
     background-color: black;
+    color: white;
     transition: .5s;
 }
 
@@ -131,7 +156,7 @@ export default {
 }
 
 .navi-links-dark {
-    width: 60%;
+    width: 700px;
     display: flex;
     justify-content: space-between;
     align-items: center;

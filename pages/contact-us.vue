@@ -186,8 +186,7 @@ textarea {
 	width: 100%;
 	padding: 20px;
 	border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.425);
-	backdrop-filter: blur(3px);
+	background-color: rgb(255, 255, 255);
 }
 
 @media only screen and (max-width: 1200px) {

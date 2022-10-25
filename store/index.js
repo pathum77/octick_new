@@ -1,9 +1,12 @@
+
+
 export const state = () => ({
-    themeState : false,
+    themeState : '',
 });
 
 export const mutations = {
-    increment(state) {
-        state.themeState = !themeState;
+
+    setThemeState(state) {
+        state.themeState = localStorage.getItem('storedData');
     },
 };
